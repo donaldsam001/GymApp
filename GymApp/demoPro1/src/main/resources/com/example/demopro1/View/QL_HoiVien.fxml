@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.gluonhq.charm.glisten.control.Icon?>-->
+<!--<?import com.gluonhq.charm.glisten.control.TextField?>-->
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="hv_from" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="962.0" stylesheets="" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demopro1.Controller.HomeController">
+    <children>
+      <AnchorPane layoutX="220.0" layoutY="377.0" prefHeight="309.0" prefWidth="741.0" stylesheets="@../Styles/QLHV.css">
+         <children>
+            <AnchorPane layoutY="-278.0" prefHeight="293.0" prefWidth="741.0" visible="false">
+               <stylesheets>
+                  <URL value="@../Styles/QLHV.css" />
+                  <URL value="@../Styles/Main.css" />
+               </stylesheets>
+            </AnchorPane>
+            <TableView fx:id="table_hv" layoutX="14.0" layoutY="17.0" prefHeight="283.0" prefWidth="716.0" stylesheets="@../Styles/QLHV.css">
+              <columns>
+                <TableColumn fx:id="customer_table_hv" minWidth="0.0" prefWidth="78.66664123535156" text="Customer ID" />
+                  <TableColumn fx:id="name_table_view" minWidth="0.0" prefWidth="133.3333740234375" text="Name" />
+                  <TableColumn fx:id="phone_table_view" minWidth="0.0" prefWidth="87.33334350585938" text="Phone" />
+                  <TableColumn fx:id="gender_table_view" minWidth="0.0" prefWidth="62.66668701171875" text="Gender" />
+                  <TableColumn fx:id="schedule_table_view" minWidth="0.0" text="Schedule" />
+                  <TableColumn fx:id="start_table_view" minWidth="0.0" prefWidth="86.0" text="Start Day" />
+                  <TableColumn fx:id="end_table_view" minWidth="0.0" prefWidth="116.0" text="End Date" />
+                  <TableColumn fx:id="status_table_view" minWidth="0.0" prefWidth="249.99993896484375" text="Status" />
+              </columns>
+               <styleClass>
+                  <String fx:value="table-column" />
+                  <String fx:value="table-column" />
+                  <String fx:value="filter" />
+               </styleClass>
+            </TableView>
+         </children>
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+      </AnchorPane>
+        <Pane fx:id="topPane" prefHeight="90.0" prefWidth="860.0" styleClass="topPane" stylesheets="@../Styles/Main.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="216.0" layoutY="14.0" text="Gym management" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="216.0" layoutY="51.0" text="Version 0.01 Beta" textFill="WHITE" />
+                <Button fx:id="logout" layoutX="729.0" layoutY="27.0" mnemonicParsing="false" styleClass="logoutButton" text="Đăng xuất ">
+                    <graphic>
+<!--                        <Icon content="EXIT_TO_APP" />-->
+                    </graphic></Button>
+                <Button fx:id="setting" layoutX="604.0" layoutY="27.0" mnemonicParsing="false" text="Cài đặt">
+                    <graphic>
+<!--                        <Icon content="SETTINGS" />-->
+                    </graphic></Button>
+
+                <Button fx:id="notification" layoutX="451.0" layoutY="27.0" mnemonicParsing="false" text="Thông báo">
+                    <graphic>
+<!--                        <Icon content="ADD_ALERT" />-->
+                    </graphic></Button>
+                <Pane layoutX="33.0" layoutY="22.0" prefHeight="102.0" prefWidth="105.0">
+                    <children>
+                        <ImageView fitHeight="102.0" fitWidth="139.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Img/rau.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="143.0" prefHeight="471.0" prefWidth="204.0" styleClass="menu" stylesheets="@../Styles/Main.css">
+            <children>
+                <Label layoutX="14.0" layoutY="245.0" text="Phòng Gym" textFill="#0009ff">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Pane layoutY="272.0" prefHeight="192.0" prefWidth="202.0">
+                    <children>
+                        <Button layoutX="1.0" layoutY="44.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý gói hội viên" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="1.0" layoutY="7.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý huấn luyện viên" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="1.0" layoutY="81.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thông tin nhân viên" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="1.0" layoutY="117.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý cơ sở vật chất" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="1.0" layoutY="154.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Thống kê&amp; báo cáo " textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <Label layoutX="14.0" layoutY="1.0" text="Hội viên" textFill="#000dff">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Pane layoutY="28.0" prefHeight="200.0" prefWidth="202.0">
+                    <children>
+                        <Button fx:id="management_time" layoutX="1.0" layoutY="85.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thời gian tập" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="management_pay" layoutX="1.0" layoutY="124.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thanh toán" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="management_cskh" layoutX="1.0" layoutY="163.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Đánh giá&amp; CSKH" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="management_card" layoutX="1.0" layoutY="51.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thẻ hội viên" textFill="RED">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="managementMembership" layoutX="1.0" layoutY="14.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="200.0" styleClass="accounts_view_container" text="Quản lý hội viên">
+                            <onAction>sch</onAction>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+      <Separator layoutX="230.0" layoutY="340.0" prefHeight="8.0" prefWidth="731.0" />
+      <AnchorPane layoutX="220.0" layoutY="96.0" prefHeight="219.0" prefWidth="741.0" stylesheets="@../Styles/QLHV.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <Label layoutX="28.0" layoutY="53.0" prefHeight="27.0" prefWidth="51.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+<!--            <TextField fx:id="name_hv" layoutX="95.0" layoutY="54.0" />-->
+            <Label layoutX="28.0" layoutY="97.0" prefHeight="27.0" prefWidth="51.0" text="Phone">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+<!--            <TextField fx:id="phone_hv" layoutX="95.0" layoutY="89.0" />-->
+            <Label layoutX="274.0" layoutY="24.0" prefHeight="27.0" prefWidth="51.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="gender_hv" layoutX="336.0" layoutY="25.0" prefHeight="3.0" prefWidth="135.0" promptText="Choose">
+               <stylesheets>
+                  <URL value="@../Styles/QLHV.css" />
+                  <URL value="@../Styles/Main.css" />
+               </stylesheets>
+            </ComboBox>
+            <Label layoutX="261.0" layoutY="81.0" prefHeight="35.0" prefWidth="65.0" text="Schedule">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="schedule_hv" layoutX="336.0" layoutY="87.0" prefHeight="3.0" prefWidth="135.0" promptText="Choose">
+               <stylesheets>
+                  <URL value="@../Styles/QLHV.css" />
+                  <URL value="@../Styles/Main.css" />
+               </stylesheets>
+            </ComboBox>
+            <Label layoutX="503.0" layoutY="24.0" prefHeight="30.0" prefWidth="77.0" text="Start Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="Start_date" layoutX="571.0" layoutY="27.0" prefHeight="31.0" prefWidth="142.0" />
+            <Label layoutX="503.0" layoutY="84.0" prefHeight="30.0" prefWidth="77.0" text="End Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="End_date" layoutX="571.0" layoutY="86.0" prefHeight="31.0" prefWidth="142.0" />
+            <Label layoutX="503.0" layoutY="130.0" prefHeight="35.0" prefWidth="65.0" text="Status">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="status_hv" layoutX="571.0" layoutY="135.0" prefHeight="31.0" prefWidth="142.0" promptText="Choose">
+               <stylesheets>
+                  <URL value="@../Styles/QLHV.css" />
+                  <URL value="@../Styles/Main.css" />
+               </stylesheets>
+            </ComboBox>
+            <Button fx:id="add_hv" layoutX="28.0" layoutY="157.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" text="Add" />
+            <Button fx:id="clear_hv" layoutX="127.0" layoutY="157.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" text="Clear" />
+            <Button fx:id="delete_hv" layoutX="351.0" layoutY="157.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" text="Delete" />
+            <Button fx:id="update_hv" layoutX="235.0" layoutY="157.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" text="Update" />
+            <Label layoutX="2.0" layoutY="9.0" prefHeight="35.0" prefWidth="93.0" text="Customer  ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+<!--            <TextField fx:id="customerID_hv" layoutX="95.0" layoutY="11.0" />-->
+         </children>
+      </AnchorPane>
+    </children>
+</fx:root>
