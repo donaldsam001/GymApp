@@ -14,7 +14,7 @@ public class Main extends Application {
 //    private Database db= new Database();
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/QL_HoiVien.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/home-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/example/demopro1/Img/rau.jpg")));
         stage.setTitle("Main");

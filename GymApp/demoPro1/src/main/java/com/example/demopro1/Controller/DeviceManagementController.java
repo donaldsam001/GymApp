@@ -1,18 +1,15 @@
 package com.example.demopro1.Controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import com.example.demopro1.DAO.EquipmentDAO;
+import com.example.demopro1.Models.Equipment;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class DeviceManagementController {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Button handelAdd;
@@ -27,24 +24,90 @@ public class DeviceManagementController {
     private TextField inputName;
 
     @FXML
-    private TextField inputSearch;
+    private TableView<Equipment> equipmentTable;
 
     @FXML
-    private TextField inputSearchDel;
+    private TableColumn<Equipment, String> colID;
 
     @FXML
-    private TextField inputSearchMaintance;
+    private TableColumn<Equipment, String> colName;
+
+    @FXML
+    private TableColumn<Equipment, String> colDescription;
+
+    @FXML
+    private TableColumn<Equipment, String> colStatus;
+
+    private ObservableList<Equipment> equipmentList = FXCollections.observableArrayList();
 
     @FXML
     void initialize() {
-        assert handelAdd != null : "fx:id=\"handelAdd\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputCode != null : "fx:id=\"inputCode\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputDescription != null : "fx:id=\"inputDescription\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputName != null : "fx:id=\"inputName\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputSearch != null : "fx:id=\"inputSearch\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputSearchDel != null : "fx:id=\"inputSearchDel\" was not injected: check your FXML file 'device-management.fxml'.";
-        assert inputSearchMaintance != null : "fx:id=\"inputSearchMaintance\" was not injected: check your FXML file 'device-management.fxml'.";
+        handelAdd.setOnAction(event -> handleAdd());
+        setupTableView();
+        loadEquipmentData();
+    }
+
+    private void handleAdd() {
+        String code = inputCode.getText();
+        String name = inputName.getText();
+        String description = inputDescription.getText();
+
+        if (code.isEmpty() || name.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Mã và tên thiết bị không được để trống.");
+            return;
+        }
+
+        try {
+            int id = Integer.parseInt(code);
+            Equipment equipment = new Equipment(id, name, description, "Hoạt động");
+
+            EquipmentDAO.insertEquipment(equipment);
+
+            showAlert(Alert.AlertType.INFORMATION, "Thành công", "Thiết bị đã được thêm.");
+            clearFields();
+            loadEquipmentData();
+
+        } catch (NumberFormatException e) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Mã thiết bị phải là số.");
+        }
+    }
+
+    private void clearFields() {
+        inputCode.clear();
+        inputName.clear();
+        inputDescription.clear();
+    }
+
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void setupTableView() {
+        colID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        equipmentTable.setItems(equipmentList);
+    }
+
+    private void loadEquipmentData() {
+        equipmentList.setAll(EquipmentDAO.getAllEquipment());
+    }
+
+    @FXML
+    void handleDel(ActionEvent event) {
 
     }
+
+
+
+
+
+
 
 }

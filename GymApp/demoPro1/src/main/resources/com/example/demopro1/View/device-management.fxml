@@ -25,7 +25,7 @@
                           <children>
                               <VBox prefHeight="412.0" prefWidth="900.0">
                                   <children>
-                                      <HBox prefHeight="67.0" prefWidth="900.0" VBox.vgrow="NEVER">
+                                      <HBox prefHeight="74.0" prefWidth="900.0" VBox.vgrow="NEVER">
                                           <children>
                                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mã thiết bị:">
                                                   <HBox.margin>
@@ -37,7 +37,7 @@
                                                   </HBox.margin></TextField>
                                           </children>
                                       </HBox>
-                                      <HBox prefHeight="66.0" prefWidth="852.0">
+                                      <HBox prefHeight="82.0" prefWidth="900.0">
                                           <children>
                                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tên thiết bị:">
                                              <HBox.margin>
@@ -52,7 +52,7 @@
                                           <Insets />
                                        </VBox.margin>
                                       </HBox>
-                                      <HBox prefHeight="250.0" prefWidth="900.0">
+                                      <HBox prefHeight="270.0" prefWidth="900.0">
                                           <children>
                                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chi tiết:">
                                              <HBox.margin>
@@ -78,7 +78,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView layoutY="94.0" prefHeight="448.0" prefWidth="900.0">
+                              <TableView layoutY="94.0" prefHeight="395.0" prefWidth="900.0">
                                  <columns>
                                     <TableColumn prefWidth="142.39999675750732" text="Mã thiết bị" />
                                     <TableColumn minWidth="8.79998779296875" prefWidth="228.79998779296875" text="Tên thiết bị" />
@@ -92,6 +92,7 @@
                                     <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm:" />
                                  </children>
                               </Pane>
+                              <Button fx:id="btnDel" layoutX="424.0" layoutY="513.0" mnemonicParsing="false" onAction="#handleDel" text="Xóa toàn bộ" />
                            </children></AnchorPane>
                   </content>
                 </Tab>
@@ -105,13 +106,13 @@
                                     <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm:" />
                                  </children>
                               </Pane>
-                              <TableView layoutY="86.0" prefHeight="448.0" prefWidth="900.0">
+                              <TableView layoutY="86.0" prefHeight="486.0" prefWidth="900.0">
                                  <columns>
                                     <TableColumn prefWidth="100.79998934268951" text="Mã thiết bị" />
                                     <TableColumn minWidth="8.79998779296875" prefWidth="183.99999237060547" text="Tên thiết bị" />
-                                    <TableColumn prefWidth="246.39999389648438" text="Chi tiết" />
-                                    <TableColumn prefWidth="246.4000244140625" text="Nội dung bảo trì" />
-                                    <TableColumn prefWidth="204.800048828125" text="Ngày bảo trì" />
+                                    <TableColumn prefWidth="213.5999755859375" text="Chi tiết" />
+                                    <TableColumn minWidth="0.0" prefWidth="261.6000671386719" text="Nội dung bảo trì" />
+                                    <TableColumn prefWidth="139.99993896484375" text="Ngày bảo trì" />
                                  </columns>
                               </TableView>
                            </children></AnchorPane>
@@ -127,11 +128,12 @@
                                     <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tìm kiếm:" />
                                  </children>
                               </Pane>
-                              <TableView layoutY="94.0" prefHeight="448.0" prefWidth="900.0">
+                              <TableView fx:id="equipmentTable" layoutY="94.0" prefHeight="478.0" prefWidth="900.0">
                                  <columns>
-                                    <TableColumn prefWidth="142.39999675750732" text="Mã thiết bị" />
-                                    <TableColumn minWidth="8.79998779296875" prefWidth="228.79998779296875" text="Tên thiết bị" />
-                                    <TableColumn prefWidth="528.0000305175781" text="Chi tiết" />
+                                    <TableColumn fx:id="colID" prefWidth="142.39999675750732" text="Mã thiết bị" />
+                                    <TableColumn fx:id="colName" minWidth="8.79998779296875" prefWidth="228.79998779296875" text="Tên thiết bị" />
+                                    <TableColumn fx:id="colDescription" prefWidth="425.6000671386719" text="Chi tiết" />
+                                    <TableColumn fx:id="colStatus" prefWidth="102.39996337890625" text="Trạng thái" />
                                  </columns>
                               </TableView>
                               </children>
