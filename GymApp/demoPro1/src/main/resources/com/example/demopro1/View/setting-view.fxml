@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="492.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demopro1.Controller.SettingController">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="606.0">
+        <children>
+          <TextField fx:id="inputSearch" layoutX="439.0" layoutY="14.0" minWidth="80.0" prefHeight="26.0"
+                     prefWidth="127.0" promptText="Tìm kiếm"/>
+          <TableView layoutY="78.0" prefHeight="473.0" prefWidth="606.0">
+              <columns>
+                  <TableColumn prefWidth="92.79998779296875" text="Mã nhân viên"/>
+                  <TableColumn minWidth="8.79998779296875" prefWidth="120.0" text="Tên nhân viên"/>
+                  <TableColumn prefWidth="99.99995422363281" text="Số điện thoại"/>
+                  <TableColumn prefWidth="156.0" text="Email"/>
+                  <TableColumn prefWidth="137.5999755859375" text="Quyền truy cập"/>
+              </columns>
+          </TableView>
+        </children>
+        <cursor>
+          <Cursor fx:constant="DEFAULT"/>
+        </cursor>
+    </AnchorPane>
+</AnchorPane>
