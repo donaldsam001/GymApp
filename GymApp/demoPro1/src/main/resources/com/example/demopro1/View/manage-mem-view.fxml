@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demopro1.Controller.ManageMemController">
+
+   <top>
+      <ToolBar>
+         <Button text="Quản lý hội viên" onAction="#openMembershipPage" />
+         <Button text="Quản lý thẻ" onAction="#openThePage" />
+         <Button text="Quản lý thời gian tập" onAction="#openTimePage" />
+         <Button text="Thanh toán" onAction="#openPayPage" />
+      </ToolBar>
+   </top>
+
+   <center>
+      <Pane fx:id="mainContent" prefHeight="600.0" prefWidth="800.0"/>
+   </center>
+</BorderPane>

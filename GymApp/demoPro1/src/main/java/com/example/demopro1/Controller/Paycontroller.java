@@ -1,6 +1,6 @@
 package com.example.demopro1.Controller;
 
-import com.example.demopro1.Models.MembershipPackage;
+import com.example.demopro1.Models.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,27 +25,27 @@ public class Paycontroller {
     private Button payment_payBtn;
 
     @FXML
-    private TableView<MembershipPackage> pay_tableview;
+    private TableView<Customer> pay_tableview;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_col_customer;
+    private TableColumn<Customer, String> pay_col_customer;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_name;
+    private TableColumn<Customer, String> pay_name;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_phone;
+    private TableColumn<Customer, String> pay_phone;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_col_start;
+    private TableColumn<Customer, String> pay_col_start;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_col_end;
+    private TableColumn<Customer, String> pay_col_end;
 
     @FXML
-    private TableColumn<MembershipPackage, String> pay_col_status;
+    private TableColumn<Customer, String> pay_col_status;
 
-    private ObservableList<MembershipPackage> membershipPackageList;
+    private ObservableList<Customer> customerList;
 
     @FXML
     public void initialize() {
@@ -58,20 +58,20 @@ public class Paycontroller {
         pay_col_status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         // Tạo danh sách khách hàng mẫu
-//        membershipPackageList = FXCollections.observableArrayList(
-//                new MembershipPackage("C001", "John Doe", "123456789", "2023-01-01", "2023-12-31", "Active"),
-//                new MembershipPackage("C002", "Jane Smith", "987654321", "2023-02-01", "2023-11-30", "Inactive")
-//        );
+        customerList = FXCollections.observableArrayList(
+                new Customer("C001", "John Doe", "123456789", "2023-01-01", "2023-12-31", "Active"),
+                new Customer("C002", "Jane Smith", "987654321", "2023-02-01", "2023-11-30", "Inactive")
+        );
 
         // Gán danh sách khách hàng cho bảng
-        pay_tableview.setItems(membershipPackageList);
+        pay_tableview.setItems(customerList);
 
         // Gán danh sách khách hàng cho ComboBox
-//        ObservableList<String> customerIDs = FXCollections.observableArrayList();
-//        for (MembershipPackage membershipPackage : membershipPackageList) {
-//            customerIDs.add(membershipPackage.getCustomerID());
-//        }
-//        payment_CustomerID.setItems(customerIDs);
+        ObservableList<String> customerIDs = FXCollections.observableArrayList();
+        for (Customer customer : customerList) {
+            customerIDs.add(customer.getCustomerID());
+        }
+        payment_CustomerID.setItems(customerIDs);
     }
 
     @FXML

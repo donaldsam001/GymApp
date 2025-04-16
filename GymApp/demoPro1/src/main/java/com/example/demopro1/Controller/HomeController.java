@@ -88,6 +88,22 @@ public class HomeController {
         }
     }
 
+    @FXML
+    private void openMem(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/manage-mem-view.fxml"));
+            Pane root = loader.load();
+
+            Stage newStage = new Stage();
+            newStage.setTitle("Quản lý nhân viên"); // tiêu đề cửa sổ
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Không thể mở cửa sổ Quản lý nhân viên.");
+        }
+    }
+
 
     @FXML
     private void openDeviceManagement(ActionEvent event) {

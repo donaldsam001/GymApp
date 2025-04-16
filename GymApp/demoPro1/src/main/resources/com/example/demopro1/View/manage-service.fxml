@@ -31,35 +31,53 @@
                                              <HBox.margin>
                                                 <Insets />
                                              </HBox.margin></Text>
-                                          <TextField fx:id="inputCode" HBox.hgrow="ALWAYS">
+                                          <TextField fx:id="inputCode" prefHeight="30.0" prefWidth="486.0">
                                              <HBox.margin>
                                                 <Insets />
                                              </HBox.margin></TextField>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
                                     <HBox prefHeight="66.0" prefWidth="852.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tên gói hội viên:" />
-                                          <TextField fx:id="inputName" />
+                                          <TextField fx:id="inputName">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin></TextField>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
-                                    <HBox prefHeight="129.0" prefWidth="600.0">
+                                    <HBox prefHeight="80.0" prefWidth="852.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chi tiết:" />
                                           <TextField fx:id="inputDescription" />
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
-                                    <HBox prefHeight="63.0" prefWidth="852.0">
+                                    <HBox prefHeight="59.0" prefWidth="852.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thời hạn:" />
                                           <TextField fx:id="inputExpDate" />
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
-                                    <HBox prefHeight="72.0" prefWidth="852.0">
+                                    <HBox prefHeight="48.0" prefWidth="852.0">
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Giá:" />
                                           <TextField fx:id="inputPrice" />
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
                                  </children>
                               </VBox>
@@ -73,14 +91,13 @@
                         <AnchorPane>
                            <children>
                               <TextField fx:id="inputSearch" layoutX="450.0" layoutY="14.0" promptText="Tìm kiếm" />
-                              <TableView layoutY="54.0">
+                              <TableView fx:id="listPackage1" layoutY="58.0" prefHeight="400.0" prefWidth="882.0">
                                  <columns>
-                                    <TableColumn prefWidth="92.79998779296875" text="Mã gói hội viên" />
-                                    <TableColumn minWidth="8.79998779296875" prefWidth="120.0" text="Tên gói hội viên" />
-                                    <TableColumn prefWidth="320.00001525878906" text="Chi tiết" />
-                                    <TableColumn minWidth="0.0" prefWidth="139.20001220703125" text="Thời hạn" />
-                                    <TableColumn prefWidth="75.2000732421875" text="Giá" />
-                                    <TableColumn prefWidth="96.79998779296875" text="Sửa" />
+                                    <TableColumn fx:id="colId1" prefWidth="115.99999523162842" text="Mã gói hội viên" />
+                                    <TableColumn fx:id="colName1" minWidth="8.79998779296875" prefWidth="170.40001678466797" text="Tên gói hội viên" />
+                                    <TableColumn fx:id="colDescription1" prefWidth="355.9999084472656" text="Chi tiết" />
+                                    <TableColumn fx:id="colExpDate1" minWidth="0.0" prefWidth="120.79998779296875" text="Thời hạn" />
+                                    <TableColumn fx:id="colPrice1" prefWidth="113.5999755859375" text="Giá" />
                                  </columns>
                               </TableView>
                            </children>
@@ -92,14 +109,14 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
                               <TextField fx:id="inputSearch" layoutX="467.0" layoutY="14.0" minWidth="200.0" promptText="Tìm kiếm" />
-                              <TableView layoutY="53.0">
+                              <TableView fx:id="listPackage2" layoutY="58.0" prefHeight="400.0" prefWidth="882.0">
                                  <columns>
-                                    <TableColumn prefWidth="113.60003471374512" text="Mã gói hội viên" />
-                                    <TableColumn minWidth="8.79998779296875" prefWidth="122.40001678466797" text="Tên gói hội viên" />
-                                    <TableColumn prefWidth="319.99998474121094" text="Chi tiết" />
-                                    <TableColumn minWidth="0.0" prefWidth="131.199951171875" text="Thời hạn" />
-                                    <TableColumn prefWidth="84.00006103515625" text="Giá" />
-                                    <TableColumn prefWidth="88.0" text="Xóa" />
+                                    <TableColumn fx:id="colId2" prefWidth="115.99999523162842" text="Mã gói hội viên" />
+                                    <TableColumn fx:id="colName2" minWidth="8.79998779296875" prefWidth="170.40001678466797" text="Tên gói hội viên" />
+                                    <TableColumn fx:id="colDescription2" prefWidth="184.0" text="Chi tiết" />
+                                    <TableColumn fx:id="colExpDate2" minWidth="0.0" prefWidth="169.59994506835938" text="Thời hạn" />
+                                    <TableColumn fx:id="colPrice2" prefWidth="120.0" text="Giá" />
+                                    <TableColumn prefWidth="111.2000732421875" text="Xóa" />
                                  </columns>
                               </TableView>
                            </children>
@@ -119,6 +136,7 @@
                                     <TableColumn fx:id="colPrice" prefWidth="113.5999755859375" text="Giá" />
                                 </columns>
                               </TableView>
+                              <TextField fx:id="inputSearch1" layoutX="454.0" layoutY="14.0" minWidth="200.0" prefHeight="30.0" prefWidth="242.0" promptText="Tìm kiếm" />
                            </children>
                         </AnchorPane>
                     </content>

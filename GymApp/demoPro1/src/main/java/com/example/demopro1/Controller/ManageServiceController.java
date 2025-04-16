@@ -28,6 +28,36 @@ public class ManageServiceController {
     @FXML
     private TableColumn<MembershipPackage, Float> colPrice;
 
+    @FXML
+    private TableColumn<MembershipPackage, Integer> colId1;
+
+    @FXML
+    private TableColumn<MembershipPackage, String> colName1;
+
+    @FXML
+    private TableColumn<MembershipPackage, String> colDescription1;
+
+    @FXML
+    private TableColumn<MembershipPackage, Integer> colExpDate1;
+
+    @FXML
+    private TableColumn<MembershipPackage, Float> colPrice1;
+
+    @FXML
+    private TableColumn<MembershipPackage, Integer> colId2;
+
+    @FXML
+    private TableColumn<MembershipPackage, String> colName2;
+
+    @FXML
+    private TableColumn<MembershipPackage, String> colDescription2;
+
+    @FXML
+    private TableColumn<MembershipPackage, Integer> colExpDate2;
+
+    @FXML
+    private TableColumn<MembershipPackage, Float> colPrice2;
+
 
     @FXML
     private Button handelCreate;
@@ -52,6 +82,13 @@ public class ManageServiceController {
 
     @FXML
     private TableView<MembershipPackage> listPackage;
+
+
+    @FXML
+    private TableView<MembershipPackage> listPackage1;
+
+    @FXML
+    private TableView<MembershipPackage> listPackage2;
 
     @FXML
     private TabPane tabPane;
@@ -149,10 +186,8 @@ public class ManageServiceController {
 
     private void loadMembershipPackages() {
         MembershipPackageDAO dao = new MembershipPackageDAO();
-
-
         System.out.println("Đang tải dữ liệu từ database...");
-        List<MembershipPackage> packages = dao.getAllMembershipPackages();
+        List<MembershipPackage> packages = dao.getAllPackages();
         System.out.println("Số lượng gói lấy được: " + packages.size());
         for (MembershipPackage p : packages) {
             System.out.println(p.getId() + " - " + p.getName());

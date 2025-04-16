@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Database db= new Database();
+//    private Database db= new Database();
 
     @Override
     public void start(Stage stage) throws IOException {

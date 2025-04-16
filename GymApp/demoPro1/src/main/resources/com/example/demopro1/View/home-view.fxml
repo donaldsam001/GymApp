@@ -61,27 +61,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="managementMembership1" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" styleClass="accounts_view_container" text="Quản lý hội viên">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thẻ hội viên" textFill="RED">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thời gian tập" textFill="RED">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý thanh toán" textFill="RED">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Đánh giá&amp; CSKH" textFill="RED">
+                        <Button fx:id="managementMembership1" mnemonicParsing="false" onAction="#openMem" prefHeight="30.0" prefWidth="200.0" styleClass="accounts_view_container" text="Quản lý hội viên">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -95,11 +75,6 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý huấn luyện viên" textFill="RED">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Button>
                         <Button fx:id="btnService" mnemonicParsing="false" onAction="#openManageService" prefHeight="30.0" prefWidth="200.0" text="Quản lý gói hội viên" textFill="RED">
                            <font>
                               <Font size="14.0" />

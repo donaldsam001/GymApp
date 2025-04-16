@@ -1,3 +1,4 @@
+// Member.java - Đã sửa từ 'status' sang 'age'
 package com.example.demopro1.Models;
 
 import java.time.LocalDate;
@@ -10,9 +11,10 @@ public class Member {
     private String schedule;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String status;
+    private int age;
 
-    public Member(String customerID, String name, String phone, String gender, String schedule, LocalDate startDate, LocalDate endDate, String status) {
+    public Member(String customerID, String name, String phone, String gender,
+                  String schedule, LocalDate startDate, LocalDate endDate, int age) {
         this.customerID = customerID;
         this.name = name;
         this.phone = phone;
@@ -20,10 +22,9 @@ public class Member {
         this.schedule = schedule;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.status = status;
+        this.age = age;
     }
 
-    // Getters and Setters
     public String getCustomerID() {
         return customerID;
     }
@@ -80,11 +81,11 @@ public class Member {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
-        return status;
+    public int getAge() {
+        return age;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAge(int age) {
+        this.age = age;
     }
 }

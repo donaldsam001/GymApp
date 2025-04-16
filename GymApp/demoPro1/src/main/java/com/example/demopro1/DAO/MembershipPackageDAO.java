@@ -103,28 +103,55 @@ public class MembershipPackageDAO {
         }
     }
 
-    public List<MembershipPackage> getAllMembershipPackages() {
-        getConnection();
-        List<MembershipPackage> list = new ArrayList<>();
+//    public List<MembershipPackage> getAllMembershipPackages() {
+//        getConnection();
+//        List<MembershipPackage> list = new ArrayList<>();
+//        String sql = "SELECT * FROM Membership_package";
+//        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next()) {
+//                MembershipPackage pkg = new MembershipPackage(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getFloat("price"),
+//                        rs.getString("description"),
+//                        rs.getInt("exp"),
+//                        rs.getBoolean("status")
+//                );
+//                list.add(pkg);
+//            }
+//        } catch (SQLException e) {
+//            logger.warning(e.toString());
+//        } finally {
+//            closeConnection();
+//        }
+//        return list;
+//    }
+
+    public List<MembershipPackage> getAllPackages() {
+        List<MembershipPackage> packages = new ArrayList<>();
+        String url = "jdbc:sqlite:service_app.db";
         String sql = "SELECT * FROM Membership_package";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            ResultSet rs = stmt.executeQuery();
+
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
             while (rs.next()) {
-                MembershipPackage pkg = new MembershipPackage(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getFloat("price"),
-                        rs.getString("description"),
-                        rs.getInt("exp"),
-                        rs.getBoolean("status")
-                );
-                list.add(pkg);
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                float price = rs.getFloat("price");
+                String descr=rs.getString("description");
+                int exp=        rs.getInt("exp");
+                boolean status=        rs.getBoolean("status");
+                packages.add(new MembershipPackage(id, name, price, descr, exp, status));
             }
+
         } catch (SQLException e) {
-            logger.warning(e.toString());
-        } finally {
-            closeConnection();
+            e.printStackTrace();
         }
-        return list;
+
+        return packages;
     }
+
 }
