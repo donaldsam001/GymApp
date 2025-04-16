@@ -100,7 +100,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Quản lý gói hội viên" textFill="RED">
+                        <Button fx:id="btnService" mnemonicParsing="false" onAction="#openManageService" prefHeight="30.0" prefWidth="200.0" text="Quản lý gói hội viên" textFill="RED">
                            <font>
                               <Font size="14.0" />
                            </font>

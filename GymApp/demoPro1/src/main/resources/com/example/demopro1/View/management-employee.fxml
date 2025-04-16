@@ -49,16 +49,10 @@
                                                         <TextField fx:id="inputPhoneNumber" />
                                                     </children>
                                                 </HBox>
-                                                <HBox prefHeight="63.0" prefWidth="852.0">
-                                                    <children>
-                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Năm sinh:" />
-                                                        <TextField fx:id="inputDOB" />
-                                                    </children>
-                                                </HBox>
                                                 <HBox prefHeight="72.0" prefWidth="852.0">
                                                     <children>
-                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-                                                        <TextField fx:id="inputEmail" />
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chức vụ:" />
+                                                        <TextField fx:id="inputRole" />
                                                     </children>
                                                 </HBox>
                                             </children>
@@ -79,7 +73,7 @@
                                                 <TableColumn minWidth="8.79998779296875" prefWidth="120.0" text="Tên nhân viên" />
                                                 <TableColumn prefWidth="99.99995422363281" text="Số điện thoại" />
                                                 <TableColumn minWidth="0.0" prefWidth="145.59991455078125" text="Năm sinh" />
-                                                <TableColumn prefWidth="74.39996337890625" text="Email" />
+                                                <TableColumn prefWidth="140.79998779296875" text="Email" />
                                             </columns>
                                         </TableView>
                                     </children>

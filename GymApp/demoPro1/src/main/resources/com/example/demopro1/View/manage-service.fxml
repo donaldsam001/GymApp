@@ -17,7 +17,7 @@
    <children>
       <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <TabPane tabClosingPolicy="UNAVAILABLE">
+            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Tạo gói hội viên">
                      <content>
@@ -68,7 +68,7 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                <Tab text="Sửa gói hội viên">
+                <Tab fx:id="tabViewPackages" text="Sửa gói hội viên">
                      <content>
                         <AnchorPane>
                            <children>
@@ -87,7 +87,7 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab text="Xóa gói hội viên">
+                  <Tab fx:id="tabViewPackages" text="Xóa gói hội viên">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -106,17 +106,17 @@
                         </AnchorPane>
                     </content>
                   </Tab>
-                  <Tab text="Xem danh sách gói hội viên">
+                  <Tab fx:id="tabViewPackages" text="Xem danh sách gói hội viên">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView>
+                              <TableView fx:id="listPackage" layoutY="58.0" prefHeight="400.0" prefWidth="882.0">
                                 <columns>
-                                  <TableColumn prefWidth="142.39999675750732" text="Mã gói hội viên" />
-                                  <TableColumn minWidth="8.79998779296875" prefWidth="143.2000274658203" text="Tên gói hội viên" />
-                                    <TableColumn prefWidth="411.1999206542969" text="Chi tiết" />
-                                    <TableColumn minWidth="0.0" prefWidth="103.199951171875" text="Thời hạn" />
-                                    <TableColumn prefWidth="73.5999755859375" text="Giá" />
+                                  <TableColumn fx:id="colId" prefWidth="115.99999523162842" text="Mã gói hội viên" />
+                                  <TableColumn fx:id="colName" minWidth="8.79998779296875" prefWidth="170.40001678466797" text="Tên gói hội viên" />
+                                    <TableColumn fx:id="colDescription" prefWidth="355.9999084472656" text="Chi tiết" />
+                                    <TableColumn fx:id="colExpDate" minWidth="0.0" prefWidth="120.79998779296875" text="Thời hạn" />
+                                    <TableColumn fx:id="colPrice" prefWidth="113.5999755859375" text="Giá" />
                                 </columns>
                               </TableView>
                            </children>

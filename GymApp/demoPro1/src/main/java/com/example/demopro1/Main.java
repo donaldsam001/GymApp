@@ -11,7 +11,8 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-//    private Database db= new Database();
+    private Database db= new Database();
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/home-view.fxml"));

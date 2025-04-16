@@ -105,6 +105,22 @@ public class HomeController {
         }
     }
 
+    @FXML
+    private void openManageService(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/manage-service.fxml"));
+            Pane root = loader.load();
+
+            Stage newStage = new Stage();
+            newStage.setTitle("Quản lý thiết bị"); // tiêu đề cửa sổ
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Không thể mở cửa sổ Quản lý thiết bị.");
+        }
+    }
+
 
 
 
