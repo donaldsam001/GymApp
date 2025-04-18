@@ -154,4 +154,29 @@ public class MembershipPackageDAO {
         return packages;
     }
 
+    public List<MembershipPackage> getData() {
+        getConnection();
+        String query = "select * from Membership_package";
+        List<MembershipPackage> List = new ArrayList<>();
+        try(PreparedStatement statement = connection.prepareStatement(query)){
+            ResultSet rs = statement.executeQuery();
+
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                float price = rs.getFloat("price");
+                String description = rs.getString("description");
+                int exp = rs.getInt("exp");
+                boolean status = rs.getBoolean("status");
+                List.add(new MembershipPackage(id, name, price, description, exp, status));
+            }
+
+            closeConnection();
+        }catch(SQLException e) {
+            logger.info(e.toString());
+        }
+
+        return List;
+    }
+
 }

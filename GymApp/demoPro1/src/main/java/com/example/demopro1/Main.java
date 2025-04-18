@@ -12,10 +12,16 @@ import java.io.IOException;
 public class Main extends Application {
 
 //    private Database db= new Database();
+//    @Override
+//    public void start(Stage primaryStage) {
+//        db.createDatabase();
+
+//        // Continue with JavaFX UI setup here...
+//    }
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/home-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demopro1/View/manage-service.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/example/demopro1/Img/rau.jpg")));
         stage.setTitle("Main");
@@ -23,12 +29,7 @@ public class Main extends Application {
         stage.show();
     }
 
-//    @Override
-//    public void start(Stage primaryStage) {
-//        db.createDatabase();
-//
-//        // Continue with JavaFX UI setup here...
-//    }
+
 
 
 

@@ -1,7 +1,7 @@
 package com.example.demopro1.Controller;
 
 import com.example.demopro1.Models.Member;
-import com.example.demopro1.Utils.MemberDAO;
+import com.example.demopro1.DAO.MemberDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

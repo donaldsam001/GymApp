@@ -34,48 +34,52 @@ public class Database {
                 // Membership package table
                 stmt.execute("""
                     CREATE TABLE IF NOT EXISTS Membership_package (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        name TEXT NOT NULL,
-                        price INTEGER NOT NULL,
-                        description TEXT,
-                        exp INTEGER NOT NULL,
-                        status TEXT NOT NULL
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                name TEXT NOT NULL,
+                                price REAL NOT NULL,
+                                description TEXT,
+                                exp INTEGER NOT NULL,
+                                status INTEGER NOT NULL CHECK (status IN (0, 1))
                     );
                 """);
 
                 // Membership table
                 stmt.execute("""
                     CREATE TABLE IF NOT EXISTS Membership (
-                        id TEXT PRIMARY KEY,
-                        name TEXT NOT NULL,
-                        gender TEXT,
-                        phone TEXT NOT NULL
-                    );
+                                customerID TEXT PRIMARY KEY,
+                                name TEXT NOT NULL,
+                                phone TEXT,
+                                gender TEXT,
+                                schedule TEXT,
+                                startDate TEXT,
+                                endDate TEXT,
+                                age INTEGER
+                            );
                 """);
 
                 // Equipment table
                 stmt.execute("""
                     CREATE TABLE IF NOT EXISTS Equipment (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        name TEXT NOT NULL,
-                        description TEXT,
-                        status TEXT NOT NULL,
-                        date_repair TEXT
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                name TEXT NOT NULL,
+                                description TEXT,
+                                repairDate TEXT,
+                                status TEXT NOT NULL
                     );
                 """);
 
                 // Membership card table
                 stmt.execute("""
-                    CREATE TABLE IF NOT EXISTS Membership_card (
-                        id_mem TEXT NOT NULL,
-                        id_package INTEGER NOT NULL,
-                        status TEXT NOT NULL,
-                        start_date TEXT NOT NULL,
-                        end_date TEXT NOT NULL,
-                        PRIMARY KEY (id_mem, id_package),
-                        FOREIGN KEY (id_mem) REFERENCES Membership(id),
-                        FOREIGN KEY (id_package) REFERENCES Membership_package(id)
-                    );
+                    CREATE TABLE IF NOT EXISTS Membership_Card (
+                                customerID TEXT PRIMARY KEY,
+                                name TEXT NOT NULL,
+                                phone TEXT,
+                                gender TEXT,
+                                schedule TEXT,
+                                startDate TEXT,
+                                endDate TEXT,
+                                status INTEGER NOT NULL CHECK (status IN (0, 1))
+                            );
                 """);
 
                 //History table
@@ -110,7 +114,4 @@ public class Database {
             System.out.println("Database file does not exist.");
         }
     }
-
-
 }
-

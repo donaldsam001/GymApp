@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import com.example.demopro1.Models.Employee;
+import com.example.demopro1.Models.MembershipPackage;
 import com.example.demopro1.Utils.SQLiteConnection;
 
 import java.sql.*;
@@ -59,12 +60,13 @@ public class EmployDAO {
 
     public void insertEmployee(Employee employee) {
         getConnection();
-        String sql = "INSERT INTO Employee (name, password, phone, role) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO Employee (id, name, password, phone, role) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setString(1, employee.getName());
-            stmt.setString(2, employee.getPassword());
-            stmt.setString(3, employee.getPhone());
-            stmt.setString(4, employee.getRole());
+            stmt.setInt(1, employee.getId());
+            stmt.setString(2, employee.getName());
+            stmt.setString(3, employee.getPassword());
+            stmt.setString(4, employee.getPhone());
+            stmt.setString(5, employee.getRole());
             stmt.executeUpdate();
             logger.info("Inserted MembershipPackage successfully.");
         } catch (SQLException e) {
@@ -108,28 +110,28 @@ public class EmployDAO {
 //        }
 //    }
 //
-//    public List<MembershipPackage> getAllMembershipPackages() {
-//        getConnection();
-//        List<MembershipPackage> list = new ArrayList<>();
-//        String sql = "SELECT * FROM Membership_package";
-//        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-//            ResultSet rs = stmt.executeQuery();
-//            while (rs.next()) {
-//                MembershipPackage pkg = new MembershipPackage(
-//                        rs.getInt("id"),
-//                        rs.getString("name"),
-//                        rs.getFloat("price"),
-//                        rs.getString("description"),
-//                        rs.getInt("exp"),
-//                        rs.getBoolean("status")
-//                );
-//                list.add(pkg);
-//            }
-//        } catch (SQLException e) {
-//            logger.warning(e.toString());
-//        } finally {
-//            closeConnection();
-//        }
-//        return list;
-//    }
+public List<Employee> getAllPackages() {
+    List<Employee> packages = new ArrayList<>();
+    String url = "jdbc:sqlite:service_app.db";
+    String sql = "SELECT * FROM Employee";
+
+    try (Connection conn = DriverManager.getConnection(url);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String name = rs.getString("name");
+            String password = rs.getString("password");
+            String phone =rs.getString("phone");
+            String role =        rs.getString("role");
+            packages.add(new Employee( id, name,  password,  phone , role));
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return packages;
+}
 }

@@ -1,6 +1,6 @@
 .text-field {
     -fx-pref-width: 400px;
-    -fx-padding: 5px;
+    -fx-padding: 10px 10px 10px 10px ;
     -fx-background-radius: 8;
     -fx-border-color: #ccc;
     -fx-border-radius: 8;
@@ -35,4 +35,12 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-min-width: 150px;
+}
+.hbox {
+    -fx-spacing: 20;
+}
+
+.text {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
 }

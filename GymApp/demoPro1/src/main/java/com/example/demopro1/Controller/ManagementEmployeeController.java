@@ -5,12 +5,15 @@
 package com.example.demopro1.Controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.example.demopro1.DAO.EmployDAO;
 import com.example.demopro1.DAO.MembershipPackageDAO;
 import com.example.demopro1.Models.Employee;
 import com.example.demopro1.Models.MembershipPackage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -101,5 +104,22 @@ public class ManagementEmployeeController {
         alert.showAndWait();
     }
 
+//    private void loadMembershipPackages() {
+//        EmployDAO dao = new EmployDAO();
+//        System.out.println("Đang tải dữ liệu từ database...");
+//        List<Employee> packages = dao.getAllPackages();
+//        System.out.println("Số lượng gói lấy được: " + packages.size());
+//        for (Employee p : packages) {
+//            System.out.println(p.getId() + " - " + p.getName());
+//        }
+//
+//        if (packages != null && !packages.isEmpty()) {
+//            ObservableList<Employee> data = FXCollections.observableArrayList(packages);
+//            listPackage.setItems(data);
+//        } else {
+//            System.out.println("Không có dữ liệu gói hội viên.");
+//        }
+//    }
+//
 
 }

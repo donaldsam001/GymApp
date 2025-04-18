@@ -54,7 +54,7 @@
          <left>
             <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="246.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox fx:id="vbox" layoutX="3.0" layoutY="48.0" prefHeight="230.0" prefWidth="240.0" styleClass="vbox" stylesheets="@../Styles/Main.css">
+                  <VBox fx:id="vbox" layoutX="3.0" layoutY="48.0" prefHeight="139.0" prefWidth="240.0" styleClass="vbox" stylesheets="@../Styles/Main.css">
                      <children>
                         <Label text="Hội viên" textFill="#000dff">
                            <font>
@@ -68,7 +68,7 @@
                         </Button>
                      </children>
                   </VBox>
-                  <VBox fx:id="vbox1" layoutX="3.0" layoutY="301.0" prefHeight="230.0" prefWidth="240.0" styleClass="vbox" stylesheets="@../Styles/Main.css">
+                  <VBox fx:id="vbox1" layoutX="3.0" layoutY="212.0" prefHeight="230.0" prefWidth="240.0" styleClass="vbox" stylesheets="@../Styles/Main.css">
                      <children>
                         <Label text="Phòng Gym" textFill="#0009ff">
                            <font>

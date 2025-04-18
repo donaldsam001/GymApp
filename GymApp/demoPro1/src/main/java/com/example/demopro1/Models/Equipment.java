@@ -1,23 +1,31 @@
 package com.example.demopro1.Models;
 
+import java.time.LocalDate;
+
 public class Equipment {
-    private int id; // Có thể không cần nếu dùng AUTOINCREMENT
+    private int id; 
     private String name;
     private String description;
+    private LocalDate repairDate;
     private String status;
 
     public Equipment() {}
 
-    public Equipment(int id, String name, String description, String status) {
+    public Equipment(int id, String name, String description, LocalDate repairDate, String status) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.repairDate = repairDate;
         this.status = status;
     }
 
+    public int getId() {
+        return id;
+    }
 
-
-    // Getter - Setter
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -35,6 +43,14 @@ public class Equipment {
         this.description = description;
     }
 
+    public LocalDate getRepairDate() {
+        return repairDate;
+    }
+
+    public void setRepairDate(LocalDate repairDate) {
+        this.repairDate = repairDate;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -42,4 +58,9 @@ public class Equipment {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    
+
+
+
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane stylesheets="@../Styles/service.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demopro1.Controller.ManageServiceController">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.temp.ManageServiceController">
    <children>
       <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -86,11 +86,11 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                <Tab fx:id="tabViewPackages" text="Sửa gói hội viên">
+                <Tab fx:id="tabViewPackages1" text="Sửa gói hội viên">
                      <content>
                         <AnchorPane>
                            <children>
-                              <TextField fx:id="inputSearch" layoutX="450.0" layoutY="14.0" promptText="Tìm kiếm" />
+                              <TextField fx:id="inputSearch2" layoutX="450.0" layoutY="14.0" promptText="Tìm kiếm" />
                               <TableView fx:id="listPackage1" layoutY="58.0" prefHeight="400.0" prefWidth="882.0">
                                  <columns>
                                     <TableColumn fx:id="colId1" prefWidth="115.99999523162842" text="Mã gói hội viên" />
@@ -104,7 +104,7 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab fx:id="tabViewPackages" text="Xóa gói hội viên">
+                  <Tab fx:id="tabViewPackages2" text="Xóa gói hội viên">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0">
                            <children>
@@ -135,8 +135,11 @@
                                     <TableColumn fx:id="colExpDate" minWidth="0.0" prefWidth="120.79998779296875" text="Thời hạn" />
                                     <TableColumn fx:id="colPrice" prefWidth="113.5999755859375" text="Giá" />
                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
                               </TableView>
-                              <TextField fx:id="inputSearch1" layoutX="454.0" layoutY="14.0" minWidth="200.0" prefHeight="30.0" prefWidth="242.0" promptText="Tìm kiếm" />
+                              <TextField fx:id="inputSearch1" layoutX="595.0" layoutY="14.0" minWidth="200.0" prefHeight="30.0" prefWidth="242.0" promptText="Tìm kiếm" />
                            </children>
                         </AnchorPane>
                     </content>

@@ -59,7 +59,7 @@ public class DeviceManagementController {
 
         try {
             int id = Integer.parseInt(code);
-            Equipment equipment = new Equipment(id, name, description, "Hoạt động");
+            Equipment equipment = new Equipment(id, name, description, null, "1");
 
             EquipmentDAO.insertEquipment(equipment);
 

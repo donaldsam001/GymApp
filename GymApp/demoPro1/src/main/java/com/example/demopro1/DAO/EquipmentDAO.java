@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,13 +52,15 @@ public class EquipmentDAO {
 
             while (rs.next()) {
                 Equipment eq = new Equipment(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("description"),
-                        rs.getString("status")
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("description"),
+                    rs.getString("repairDate") != null ? LocalDate.parse(rs.getString("repairDate")) : null,
+                    rs.getString("status")
                 );
                 list.add(eq);
             }
+
 
         } catch (SQLException e) {
             e.printStackTrace();

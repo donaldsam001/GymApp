@@ -100,9 +100,9 @@ public class ManageServiceController {
     public void initialize() {
         // setup cell value factory
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colName.setCellValueFactory(new PropertyValueFactory< >("name"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colExpDate.setCellValueFactory(new PropertyValueFactory<>("exp"));
+        colExpDate.setCellValueFactory(new PropertyValueFactory<> ("exp"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         // Load dữ liệu
@@ -184,22 +184,55 @@ public class ManageServiceController {
 //        membershipTable.setItems(data);
 //    }
 
+//    private void loadMembershipPackages() {
+//        MembershipPackageDAO dao = new MembershipPackageDAO();
+//        System.out.println("Đang tải dữ liệu từ database...");
+//        List<MembershipPackage> packages = dao.getAllPackages();
+//        System.out.println("Số lượng gói lấy được: " + packages.size());
+//        for (MembershipPackage p : packages) {
+//            System.out.println(p.getId() + " - " + p.getName());
+//        }
+//
+//        if (packages != null && !packages.isEmpty()) {
+//            ObservableList<MembershipPackage> data = FXCollections.observableArrayList(packages);
+//            listPackage.setItems(data);
+//        } else {
+//            System.out.println("Không có dữ liệu gói hội viên.");
+//        }
+//    }
+
+//    private void loadMembershipPackages() {
+//            MembershipPackageDAO dao = new MembershipPackageDAO();
+//            System.out.println("Đang tải dữ liệu từ database...");
+//            List<MembershipPackage> packages = dao.getData();
+//            System.out.println("Số lượng gói lấy được: " + packages.size());
+//            for (MembershipPackage p : packages) {
+//                System.out.println(p.getId() + " - " + p.getName());
+//            }
+//
+//            if (packages != null && !packages.isEmpty()) {
+//                ObservableList<MembershipPackage> data = FXCollections.observableArrayList(packages);
+//                listPackage.setItems(data);
+//            } else {
+//                System.out.println("Không có dữ liệu gói hội viên.");
+//            }
+//    }
+
     private void loadMembershipPackages() {
         MembershipPackageDAO dao = new MembershipPackageDAO();
         System.out.println("Đang tải dữ liệu từ database...");
-        List<MembershipPackage> packages = dao.getAllPackages();
-        System.out.println("Số lượng gói lấy được: " + packages.size());
-        for (MembershipPackage p : packages) {
-            System.out.println(p.getId() + " - " + p.getName());
-        }
+        List<MembershipPackage> packages = dao.getData();
 
         if (packages != null && !packages.isEmpty()) {
             ObservableList<MembershipPackage> data = FXCollections.observableArrayList(packages);
             listPackage.setItems(data);
+            System.out.println("Số lượng gói lấy được: " + packages.size());
+            for (MembershipPackage p : packages) {
+                System.out.println(p.getId() + " - " + p.getName());
+            }
         } else {
             System.out.println("Không có dữ liệu gói hội viên.");
         }
     }
-
 
 }
